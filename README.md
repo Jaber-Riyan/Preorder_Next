@@ -57,6 +57,50 @@ npm run dev
 
 Open `http://localhost:3000` in your browser.
 
+## Database Seeding
+
+The project includes a seeder script (`prisma/seed.ts`) that populates the database with sample `Preorder` records for development and testing.
+
+### Prerequisites
+
+Make sure the database schema has been pushed:
+
+```bash
+npx prisma db push
+```
+
+### Run the Seeder
+
+Via npm script:
+
+```bash
+npm run seed
+```
+
+Or via Prisma's built-in seed system:
+
+```bash
+npx prisma db seed
+```
+
+### What it Seeds
+
+The seeder creates 5 sample preorder records with varied data:
+
+- Different customer names (John Doe, Jane Smith, etc.)
+- Various product quantities (1–5)
+- Different date ranges and statuses (active / inactive)
+- Some records include an `endsAt` date, others have it as `null`
+
+### Reset and Re-seed
+
+To wipe the database and seed fresh data:
+
+```bash
+npx prisma db push --force-reset
+npm run seed
+```
+
 ## Prisma Studio
 
 To inspect the database using Prisma Studio:
