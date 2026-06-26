@@ -1,0 +1,11 @@
+model Preorder {
+    id             String   @id @default(cuid())
+    name           String
+    productsNumber Int
+    preorderWhen   String
+    startsAt       String
+    endsAt         String?
+    status         Boolean  @default(true)
+    createdAt      DateTime @default(now())
+    updatedAt      DateTime @updatedAt
+}
